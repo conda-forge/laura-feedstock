@@ -49,6 +49,34 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+              <td>linux_aarch64_root_base6.34.10</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27057&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/laura-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_root_base6.34.10" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_root_base6.36.04</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27057&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/laura-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_root_base6.36.04" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_root_base6.34.10</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27057&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/laura-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_root_base6.34.10" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_root_base6.36.04</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27057&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/laura-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_root_base6.36.04" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>osx_64_root_base6.34.10</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27057&branchName=main">

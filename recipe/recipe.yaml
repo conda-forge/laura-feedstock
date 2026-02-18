@@ -38,8 +38,6 @@ tests:
     requirements:
       run:
         - cmake-package-check
-        - ${{ compiler('c') }}
-        - ${{ compiler('cxx') }}
 
 about:
   homepage: https://laura.hepforge.org/

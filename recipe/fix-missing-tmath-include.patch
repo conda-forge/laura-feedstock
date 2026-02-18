@@ -1,0 +1,372 @@
+diff --git a/inc/LauBlind.hh b/inc/LauBlind.hh
+index 55c3380..103b004 100644
+--- a/inc/LauBlind.hh
++++ b/inc/LauBlind.hh
+@@ -38,6 +38,7 @@ Thomas Latham
+ #define LAU_BLIND
+ 
+ #include "TString.h"
++#include <TMath.h>
+ 
+ class LauBlind {
+ 
+diff --git a/inc/LauKMatrixPropagator.hh b/inc/LauKMatrixPropagator.hh
+index 64d83de..01f0cab 100644
+--- a/inc/LauKMatrixPropagator.hh
++++ b/inc/LauKMatrixPropagator.hh
+@@ -46,6 +46,7 @@ Thomas Latham
+ 
+ #include <map>
+ #include <vector>
++#include <TMath.h>
+ 
+ class LauParameter;
+ class LauKinematics;
+diff --git a/inc/LauNRAmplitude.hh b/inc/LauNRAmplitude.hh
+index 95a016a..f9b06db 100644
+--- a/inc/LauNRAmplitude.hh
++++ b/inc/LauNRAmplitude.hh
+@@ -40,6 +40,7 @@ Thomas Latham
+ #include "LauComplex.hh"
+ 
+ #include "TString.h"
++#include <TMath.h>
+ 
+ class LauKinematics;
+ 
+diff --git a/src/Lau1DCubicSpline.cc b/src/Lau1DCubicSpline.cc
+index bb09da6..b119ab7 100644
+--- a/src/Lau1DCubicSpline.cc
++++ b/src/Lau1DCubicSpline.cc
+@@ -34,6 +34,7 @@ Thomas Latham
+ 
+ #include <TH2.h>
+ #include <TSystem.h>
++#include <TMath.h>
+ 
+ Lau1DCubicSpline::Lau1DCubicSpline( const std::vector<Double_t>& xs,
+                                     const std::vector<Double_t>& ys,
+diff --git a/src/Lau1DHistPdf.cc b/src/Lau1DHistPdf.cc
+index e8085d5..428bef0 100644
+--- a/src/Lau1DHistPdf.cc
++++ b/src/Lau1DHistPdf.cc
+@@ -38,6 +38,7 @@ Thomas Latham
+ #include <cstdlib>
+ #include <iostream>
+ #include <vector>
++#include <TMath.h>
+ 
+ class LauParameter;
+ 
+diff --git a/src/Lau2DAbsHistDP.cc b/src/Lau2DAbsHistDP.cc
+index 922fcf5..6fc33ba 100644
+--- a/src/Lau2DAbsHistDP.cc
++++ b/src/Lau2DAbsHistDP.cc
+@@ -39,6 +39,7 @@ Thomas Latham
+ #include "TSystem.h"
+ 
+ #include <iostream>
++#include <TMath.h>
+ 
+ Lau2DAbsHistDP::Lau2DAbsHistDP( const LauDaughters* daughters,
+                                 Bool_t useUpperHalfOnly,
+diff --git a/src/Lau2DHistDP.cc b/src/Lau2DHistDP.cc
+index 8c3dfb4..3b8178f 100644
+--- a/src/Lau2DHistDP.cc
++++ b/src/Lau2DHistDP.cc
+@@ -38,6 +38,7 @@ Thomas Latham
+ #include "TSystem.h"
+ 
+ #include <iostream>
++#include <TMath.h>
+ 
+ Lau2DHistDP::Lau2DHistDP( const TH2* hist,
+                           const LauDaughters* daughters,
+diff --git a/src/Lau2DHistDPPdf.cc b/src/Lau2DHistDPPdf.cc
+index 55f8733..5922790 100644
+--- a/src/Lau2DHistDPPdf.cc
++++ b/src/Lau2DHistDPPdf.cc
+@@ -37,6 +37,7 @@ Thomas Latham
+ #include "TRandom.h"
+ 
+ #include <iostream>
++#include <TMath.h>
+ 
+ Lau2DHistDPPdf::Lau2DHistDPPdf( const TH2* hist,
+                                 LauKinematics* kinematics,
+diff --git a/src/Lau2DHistPdf.cc b/src/Lau2DHistPdf.cc
+index f999ef3..7474e28 100644
+--- a/src/Lau2DHistPdf.cc
++++ b/src/Lau2DHistPdf.cc
+@@ -39,6 +39,7 @@ Thomas Latham
+ #include <cstdlib>
+ #include <iostream>
+ #include <vector>
++#include <TMath.h>
+ 
+ class LauParameter;
+ 
+diff --git a/src/LauAbsFitModel.cc b/src/LauAbsFitModel.cc
+index 8793558..1d6ca02 100644
+--- a/src/LauAbsFitModel.cc
++++ b/src/LauAbsFitModel.cc
+@@ -47,6 +47,7 @@ Thomas Latham
+ #include <iostream>
+ #include <limits>
+ #include <vector>
++#include <TMath.h>
+ 
+ LauAbsFitModel::LauAbsFitModel() :
+     fixParams_( kFALSE ),
+diff --git a/src/LauAbsPdf.cc b/src/LauAbsPdf.cc
+index 227528d..f9a3f8c 100644
+--- a/src/LauAbsPdf.cc
++++ b/src/LauAbsPdf.cc
+@@ -38,6 +38,7 @@ Thomas Latham
+ #include <iostream>
+ #include <map>
+ #include <vector>
++#include <TMath.h>
+ 
+ // Constructor for the abstract PDF class.
+ LauAbsPdf::LauAbsPdf( const TString& theVarName,
+diff --git a/src/LauDabbaRes.cc b/src/LauDabbaRes.cc
+index da38ca7..b744e6b 100644
+--- a/src/LauDabbaRes.cc
++++ b/src/LauDabbaRes.cc
+@@ -34,6 +34,7 @@ Thomas Latham
+ #include "LauResonanceInfo.hh"
+ 
+ #include <iostream>
++#include <TMath.h>
+ 
+ LauDabbaRes::LauDabbaRes( LauResonanceInfo* resInfo,
+                           const Int_t resPairAmpInt,
+diff --git a/src/LauEFKLLMRes.cc b/src/LauEFKLLMRes.cc
+index f582469..cba2ddf 100644
+--- a/src/LauEFKLLMRes.cc
++++ b/src/LauEFKLLMRes.cc
+@@ -34,6 +34,7 @@ Thomas Latham
+ #include "LauTextFileParser.hh"
+ 
+ #include <cstdlib>
++#include <TMath.h>
+ 
+ Lau1DCubicSpline* LauEFKLLMRes::magSpline_   = 0;
+ Lau1DCubicSpline* LauEFKLLMRes::phaseSpline_ = 0;
+diff --git a/src/LauFlatteRes.cc b/src/LauFlatteRes.cc
+index 9207eb7..3e2bcd9 100644
+--- a/src/LauFlatteRes.cc
++++ b/src/LauFlatteRes.cc
+@@ -34,6 +34,7 @@ Thomas Latham
+ #include "TSystem.h"
+ 
+ #include <iostream>
++#include <TMath.h>
+ 
+ LauFlatteRes::LauFlatteRes( LauResonanceInfo* resInfo,
+                             const Int_t resPairAmpInt,
+diff --git a/src/LauGaussIncohRes.cc b/src/LauGaussIncohRes.cc
+index a1260d0..374a16e 100644
+--- a/src/LauGaussIncohRes.cc
++++ b/src/LauGaussIncohRes.cc
+@@ -32,6 +32,7 @@ Thomas Latham
+ #include "LauKinematics.hh"
+ 
+ #include <iostream>
++#include <TMath.h>
+ 
+ LauGaussIncohRes::LauGaussIncohRes( LauResonanceInfo* resInfo,
+                                     const Int_t resPairAmpInt,
+diff --git a/src/LauGounarisSakuraiRes.cc b/src/LauGounarisSakuraiRes.cc
+index e20ab3d..59543bf 100644
+--- a/src/LauGounarisSakuraiRes.cc
++++ b/src/LauGounarisSakuraiRes.cc
+@@ -31,6 +31,7 @@ Thomas Latham
+ #include "LauConstants.hh"
+ 
+ #include <iostream>
++#include <TMath.h>
+ 
+ LauGounarisSakuraiRes::LauGounarisSakuraiRes( LauResonanceInfo* resInfo,
+                                               const Int_t resPairAmpInt,
+diff --git a/src/LauIsobarDynamics.cc b/src/LauIsobarDynamics.cc
+index 8e907c8..940fbbe 100644
+--- a/src/LauIsobarDynamics.cc
++++ b/src/LauIsobarDynamics.cc
+@@ -60,6 +60,7 @@ Thomas Latham
+ #include <iostream>
+ #include <set>
+ #include <vector>
++#include <TMath.h>
+ 
+ // for Kpipi: only one scfFraction 2D histogram is needed
+ LauIsobarDynamics::LauIsobarDynamics( LauDaughters* daughters,
+diff --git a/src/LauKMatrixProdPole.cc b/src/LauKMatrixProdPole.cc
+index 0859303..5c9297d 100644
+--- a/src/LauKMatrixProdPole.cc
++++ b/src/LauKMatrixProdPole.cc
+@@ -32,6 +32,7 @@ Thomas Latham
+ #include "LauResonanceMaker.hh"
+ 
+ #include <iostream>
++#include <TMath.h>
+ 
+ LauKMatrixProdPole::LauKMatrixProdPole( const TString& poleName,
+                                         Int_t poleIndex,
+diff --git a/src/LauKMatrixProdSVP.cc b/src/LauKMatrixProdSVP.cc
+index 0a8c942..13e9edd 100644
+--- a/src/LauKMatrixProdSVP.cc
++++ b/src/LauKMatrixProdSVP.cc
+@@ -31,6 +31,7 @@ Thomas Latham
+ #include "LauKMatrixPropagator.hh"
+ 
+ #include <iostream>
++#include <TMath.h>
+ 
+ LauKMatrixProdSVP::LauKMatrixProdSVP( const TString& SVPName,
+                                       Int_t channelIndex,
+diff --git a/src/LauKappaRes.cc b/src/LauKappaRes.cc
+index e2f1653..1077634 100644
+--- a/src/LauKappaRes.cc
++++ b/src/LauKappaRes.cc
+@@ -32,6 +32,7 @@ Thomas Latham
+ #include "LauResonanceInfo.hh"
+ 
+ #include <iostream>
++#include <TMath.h>
+ 
+ LauKappaRes::LauKappaRes( LauResonanceInfo* resInfo,
+                           const Int_t resPairAmpInt,
+diff --git a/src/LauLASSBWRes.cc b/src/LauLASSBWRes.cc
+index 5298795..4fd9f9d 100644
+--- a/src/LauLASSBWRes.cc
++++ b/src/LauLASSBWRes.cc
+@@ -32,6 +32,7 @@ Thomas Latham
+ #include "LauResonanceInfo.hh"
+ 
+ #include <iostream>
++#include <TMath.h>
+ 
+ LauLASSBWRes::LauLASSBWRes( LauResonanceInfo* resInfo,
+                             const Int_t resPairAmpInt,
+diff --git a/src/LauLASSRes.cc b/src/LauLASSRes.cc
+index 739c382..43cb568 100644
+--- a/src/LauLASSRes.cc
++++ b/src/LauLASSRes.cc
+@@ -32,6 +32,7 @@ Thomas Latham
+ #include "LauResonanceInfo.hh"
+ 
+ #include <iostream>
++#include <TMath.h>
+ 
+ LauLASSRes::LauLASSRes( LauResonanceInfo* resInfo,
+                         const Int_t resPairAmpInt,
+diff --git a/src/LauMinuit.cc b/src/LauMinuit.cc
+index 7f63ce8..1cccb5e 100644
+--- a/src/LauMinuit.cc
++++ b/src/LauMinuit.cc
+@@ -39,6 +39,7 @@ Thomas Latham
+ #include <algorithm>
+ #include <array>
+ #include <iostream>
++#include <TMath.h>
+ 
+ // It's necessary to define an external function that specifies the address of the function
+ // that Minuit needs to minimise. Minuit doesn't know about any classes - therefore
+diff --git a/src/LauModIndPartWaveMagPhase.cc b/src/LauModIndPartWaveMagPhase.cc
+index 660aac6..96eb847 100644
+--- a/src/LauModIndPartWaveMagPhase.cc
++++ b/src/LauModIndPartWaveMagPhase.cc
+@@ -35,6 +35,7 @@ Thomas Latham
+ 
+ #include <cstdlib>
+ #include <iostream>
++#include <TMath.h>
+ 
+ LauModIndPartWaveMagPhase::LauModIndPartWaveMagPhase( LauResonanceInfo* resInfo,
+                                                       Int_t resPairAmpInt,
+diff --git a/src/LauNRAmplitude.cc b/src/LauNRAmplitude.cc
+index fd9e8e6..4482c4d 100644
+--- a/src/LauNRAmplitude.cc
++++ b/src/LauNRAmplitude.cc
+@@ -32,6 +32,7 @@ Thomas Latham
+ #include "LauResonanceInfo.hh"
+ 
+ #include <iostream>
++#include <TMath.h>
+ 
+ LauNRAmplitude::LauNRAmplitude( LauResonanceInfo* resInfo,
+                                 const Int_t resPairAmpInt,
+diff --git a/src/LauParameter.cc b/src/LauParameter.cc
+index c2404de..d23b5b2 100644
+--- a/src/LauParameter.cc
++++ b/src/LauParameter.cc
+@@ -36,6 +36,7 @@ using std::endl;
+ #include "LauRandom.hh"
+ 
+ #include "TRandom.h"
++#include <TMath.h>
+ 
+ LauParameter::LauParameter() :
+     name_( "" ),
+diff --git a/src/LauRelBreitWignerRes.cc b/src/LauRelBreitWignerRes.cc
+index e8d7dc5..022380c 100644
+--- a/src/LauRelBreitWignerRes.cc
++++ b/src/LauRelBreitWignerRes.cc
+@@ -31,6 +31,7 @@ Thomas Latham
+ #include "LauConstants.hh"
+ 
+ #include <iostream>
++#include <TMath.h>
+ 
+ LauRelBreitWignerRes::LauRelBreitWignerRes( LauResonanceInfo* resInfo,
+                                             const Int_t resPairAmpInt,
+diff --git a/src/LauRescattering2Res.cc b/src/LauRescattering2Res.cc
+index 24faad4..fa5660c 100644
+--- a/src/LauRescattering2Res.cc
++++ b/src/LauRescattering2Res.cc
+@@ -32,6 +32,7 @@ Thomas Latham
+ #include "LauResonanceInfo.hh"
+ 
+ #include <iostream>
++#include <TMath.h>
+ 
+ LauRescattering2Res::LauRescattering2Res( LauResonanceInfo* resInfo,
+                                           const Int_t resPairAmpInt,
+diff --git a/src/LauSigmaRes.cc b/src/LauSigmaRes.cc
+index 0704b29..6a00087 100644
+--- a/src/LauSigmaRes.cc
++++ b/src/LauSigmaRes.cc
+@@ -32,6 +32,7 @@ Thomas Latham
+ #include "LauResonanceInfo.hh"
+ 
+ #include <iostream>
++#include <TMath.h>
+ 
+ LauSigmaRes::LauSigmaRes( LauResonanceInfo* resInfo,
+                           const Int_t resPairAmpInt,
+diff --git a/src/LauSimpleFitModel.cc b/src/LauSimpleFitModel.cc
+index 28a31a7..49a28d6 100644
+--- a/src/LauSimpleFitModel.cc
++++ b/src/LauSimpleFitModel.cc
+@@ -59,6 +59,7 @@ Thomas Latham
+ #include <iomanip>
+ #include <iostream>
+ #include <typeinfo>
++#include <TMath.h>
+ 
+ LauSimpleFitModel::LauSimpleFitModel( LauIsobarDynamics* sigModel ) :
+     LauAbsFitModel(),
+diff --git a/src/LauVetoes.cc b/src/LauVetoes.cc
+index 630c8d0..873c0ef 100644
+--- a/src/LauVetoes.cc
++++ b/src/LauVetoes.cc
+@@ -31,6 +31,7 @@ Thomas Latham
+ #include "LauKinematics.hh"
+ 
+ #include <iostream>
++#include <TMath.h>
+ 
+ LauVetoes::LauVetoes() :
+     nVetoes_( 0 )

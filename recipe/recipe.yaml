@@ -11,6 +11,7 @@ source:
   sha256: 04dec63b2f6b958558b138f6ce0e6f9a95bc21b21f614e5a585ab405e90840e3
   patches:
     - fix-cmake-root-6.38.patch
+    - fix-missing-tmath-include.patch
 
 build:
   number: 4

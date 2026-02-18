@@ -39,6 +39,13 @@ tests:
     requirements:
       run:
         - cmake-package-check
+        - if: linux
+          then:
+            - gcc_linux-64
+            - gxx_linux-64
+          else:
+            - clang
+            - clangxx
 
 about:
   homepage: https://laura.hepforge.org/

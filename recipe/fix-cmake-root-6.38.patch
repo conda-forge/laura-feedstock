@@ -1,0 +1,29 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 812a927..18bd164 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -14,7 +14,7 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
+ endif()
+ 
+ # Also require a minimum version of CMake
+-cmake_minimum_required(VERSION 3.12.0)
++cmake_minimum_required(VERSION 3.13.0)
+ 
+ # Project setup
+ project(Laura++ VERSION 3.6.0
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index e2f390c..964a274 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -10,9 +10,9 @@ set_target_properties(Laura++ PROPERTIES OUTPUT_NAME Laura++)
+ set_target_properties(Laura++ PROPERTIES VERSION ${CMAKE_PROJECT_VERSION} SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR})
+ set_target_properties(Laura++ PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
+ target_include_directories(Laura++ PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/inc> $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${CMAKE_PROJECT_NAME}>)
+-target_link_libraries(Laura++ ROOT::Core ROOT::RIO ROOT::Hist ROOT::Matrix ROOT::Physics ROOT::Minuit ROOT::EG ROOT::Tree)
++target_link_libraries(Laura++ PUBLIC ROOT::Core ROOT::RIO ROOT::Hist ROOT::Matrix ROOT::Physics ROOT::Minuit ROOT::EG ROOT::Tree)
+ if (LAURA_BUILD_ROOFIT_TASK)
+-    target_link_libraries(Laura++ ROOT::RooFit ROOT::RooFitCore)
++    target_link_libraries(Laura++ PUBLIC ROOT::RooFit ROOT::RooFitCore)
+ endif()
+ 
+ # Install the libraries

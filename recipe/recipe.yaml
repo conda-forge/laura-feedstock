@@ -8,11 +8,13 @@ package:
 
 source:
   url: "https://laura.hepforge.org/downloads?f=Laura-${{ version }}.tar.gz"
-  file_name: Laura.tar.gz
   sha256: 04dec63b2f6b958558b138f6ce0e6f9a95bc21b21f614e5a585ab405e90840e3
+  patches:
+    - fix-cmake-root-6.38.patch
+    - fix-missing-tmath-include.patch
 
 build:
-  number: 3
+  number: 4
   skip: win
 
 requirements:
@@ -25,6 +27,7 @@ requirements:
   host:
     - root
     - root_base
+    - root_cxx_standard
   run:
     - ${{ pin_compatible('root_base', upper_bound='x.x') }}
   run_exports:
@@ -36,8 +39,13 @@ tests:
     requirements:
       run:
         - cmake-package-check
-        - ${{ compiler('c') }}
-        - ${{ compiler('cxx') }}
+        - if: linux
+          then:
+            - gcc_linux-64
+            - gxx_linux-64
+          else:
+            - clang
+            - clangxx
 
 about:
   homepage: https://laura.hepforge.org/
@@ -49,7 +57,7 @@ about:
   license: Apache-2.0
   license_file: LICENSE-2.0
   documentation: https://laura.hepforge.org/doc/
-  repository: https://phab.hepforge.org/source/laura
+  repository: https://repo.hepforge.org/source/laura/
 
 extra:
   recipe-maintainers:

@@ -1,6 +1,6 @@
 context:
   name: laura
-  version: "3.6.0"
+  version: "3.7.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,13 +8,10 @@ package:
 
 source:
   url: "https://laura.hepforge.org/downloads?f=Laura-${{ version }}.tar.gz"
-  sha256: 04dec63b2f6b958558b138f6ce0e6f9a95bc21b21f614e5a585ab405e90840e3
-  patches:
-    - fix-cmake-root-6.38.patch
-    - fix-missing-tmath-include.patch
+  sha256: 4bb233590f411d6b5a3138d995955cc9d0075af95209d0e2131fa28fc10eab89
 
 build:
-  number: 4
+  number: 0
   skip: win
 
 requirements:

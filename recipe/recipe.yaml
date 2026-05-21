@@ -1,6 +1,6 @@
 context:
   name: laura
-  version: "3.7.0"
+  version: "3.8.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: "https://laura.hepforge.org/downloads?f=Laura-${{ version }}.tar.gz"
-  sha256: 4bb233590f411d6b5a3138d995955cc9d0075af95209d0e2131fa28fc10eab89
+  sha256: 444296facb63035e3289c3b8746c2d972ec12edfa7c9207cebe5782e43e586d2
 
 build:
   number: 0

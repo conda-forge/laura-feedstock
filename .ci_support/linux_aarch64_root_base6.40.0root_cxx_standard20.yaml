@@ -17,9 +17,9 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-aarch64:alma9
 root_base:
-- 6.38.0
+- 6.40.0
 root_cxx_standard:
-- '23'
+- '20'
 target_platform:
 - linux-aarch64
 zip_keys:
